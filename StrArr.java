@@ -4,28 +4,28 @@ public class StrArr{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the number of words going to enter");
 		int n = scan.nextInt();	
+		int i,j,k;
 		String s[] = new String[50];
 		System.out.println("Enter the words : ");
-		for(int i=0;i<n;i++)
+		for(i=0;i<n;i++)
 			s[i]=scan.next( );
 		
 		char b[]=new char[50];
-		for(int j=0;j<n;j++){
-			char c[] = s[j].toCharArray();
-			for(int k=1;k<n-1;k++){
-				char ch[] = s[k].toCharArray();
-				for(int l=0;l<c.length;l++){
-					if(c[l]==ch[l])
-						b[l]=c[l];
-					else
-						break;
-					
-				}
-			}
 		
+		for(i=0,k=1;i<n-1;k++,i++){
+			for(j=0;j<s[k].length();j++){
+				if(s[i].charAt(j)==s[k].charAt(j))
+					b[j]=s[k].charAt(j);
+				else
+					break;
+					
+			}	
+			
 		}
-		for(int m=0;m<b.length;m++)
-			System.out.printf("%c",b[m]);
+		
+		
+		for(i=0;i<b.length;i++)
+			System.out.printf("%c",b[i]);
 		
 	}
 } 
